@@ -1,0 +1,23 @@
+{
+  "name": "resumeone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass -watch scss -o css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chisto4/MyResumeMarkOne.git"
+  },
+  "author": "CHisto4",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chisto4/MyResumeMarkOne/issues"
+  },
+  "homepage": "https://github.com/chisto4/MyResumeMarkOne#readme",
+  "dependencies": {
+    "node-sass": "^5.0.0"
+  }
+}

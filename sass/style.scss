@@ -1,0 +1,674 @@
+/*ОБНУЛЕНИЕ*/
+*{padding: 0;margin: 0;border: 0;}
+:focus,:active {outline: none;}
+a:focus,a:active {outline: none;}
+nav,footer,header,aside{display: block; transition: 0.8s;}
+html, body{height: 100%;width: 100%;font-size: 100%;}
+input,button,textarea, body { font-family: Fira Sans, sans-serif; color: #333; transition: 0.8s;}
+input::-ms-clear {display: none;}
+button {cursor: pointer;}
+button::-moz-focus-inner {padding:0; border:0;}
+a,a:visited {text-decoration: none;}
+a:hover {text-decoration: none;}
+ul li {list-style: none;}
+h1,h2,h3,h4,h5,h6 {font-size: inherit;}
+
+%padingMargin {
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
+%flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+}
+
+body {
+   
+    @extend %flexCenter;
+    height: 100vh;
+    font-family: 'Jura', sans-serif;
+    font-size: 18px;
+    transition: 0.6s;
+
+    background: linear-gradient(to left bottom,rgba(203, 227, 247, 0.384) 30%, rgba(235, 229, 181, 0.171) 80%);
+
+    @media (max-width: 739px), (max-height: 739px) {
+        font-size: 14px;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+}
+
+main {
+    display: flex;
+    width: calc(90vh/1.4);
+    max-width: 695px;
+    height: 90vh;
+    max-height: 973px;
+
+    box-shadow: -80px 50px 100px rgba(116, 114, 114, 0.644),
+    5px -5px 25px rgba(116, 115, 115, 0.616);
+
+    @media (max-width: 739px), (max-height: 739px) {
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        margin-top: 0;
+        
+        box-shadow: none;
+    
+    }
+}
+
+section {
+    @extend %flexCenter;
+    flex-direction: row;
+}
+
+//LEFT SECTION
+
+.userInformathion {
+    @extend %flexCenter;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 40%;
+    box-shadow: 5px -5px 25px rgba(116, 115, 115, 0.74);
+
+    @media (max-width: 739px), (max-height: 739px) {
+        width: 100%;
+    height: 100%;
+
+    box-shadow: none;
+    }
+}
+
+.avatar {
+    background: url(/img/Me.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-size: cover;
+
+    width: 100%;
+    height: 50%;
+    margin: 0;
+
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+
+    @media (max-width: 739px), (max-height: 739px) {
+        height: 80vh;
+    }
+}
+
+h4 {
+    font-size: 1rem;
+    padding-bottom: 0.5rem;
+
+    @media (min-height: 900px) and (max-height: 955px) {
+        font-size: 0.9rem;
+    }
+    @media (min-height: 845px) and (max-height: 899px) {
+        font-size: 0.9rem;
+    }
+    @media (min-height: 768px) and (max-height: 844px) {
+        font-size: 0.8rem;
+    }
+    @media (min-height: 740px) and (max-height: 767px) {
+    font-size: 0.6rem;
+    }
+}
+
+.name {
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    color: white;
+
+    position: absolute;
+    padding-top: 1%;
+    z-index: 1;
+
+    @media (min-height: 740px) and (max-height: 767px) {
+    font-size: 0.8rem;
+    }
+
+    @media (max-width: 739px), (max-height: 739px) {
+        display: flex;
+        font-size: 1.2rem;
+    }
+}
+
+//ABOUT ME
+
+.aboutMeBlock {
+    @extend %flexCenter;
+    height: 50%;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 1rem;
+
+    @media (max-width: 739px), (max-height: 739px) {
+        height: auto;
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 0.5rem;
+    }
+}
+
+.aboutMe {
+    font-size: 0.8rem;
+    text-align: justify;
+
+    @media (min-height: 845px) and (max-height: 899px) {
+        font-size: 0.7rem;
+    }
+    @media (min-height: 768px) and (max-height: 844px) {
+        font-size: 0.6rem;
+    }
+    @media (min-height: 740px) and (max-height: 767px) {
+        font-size: 0.5rem;
+    }
+    @media (max-width: 739px), (max-height: 739px) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        height: 20vh;
+        font-size: 0.8rem;
+    }
+}
+
+.desctopContact {
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 739px), (max-height: 739px) {
+        display: none;
+    }
+}
+
+.mobileContact {
+    display: none;
+
+    @media (max-width: 739px), (max-height: 739px) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 1rem;
+
+        h4 {
+            margin-top: 1rem;
+            font-size: 1.3rem;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+    }
+}
+
+.contact {
+    font-size: 0.8em;
+    text-align: justify;
+    width: 100%;
+
+        a {
+            text-decoration: none;
+            color: black;
+
+            &:hover {
+                font-size: 1rem;
+                color: rgba(84, 119, 196, 0.877);
+                transition: 0.4s;
+            }
+
+            &:after {
+                transition: 0.8s;
+            }
+        }
+
+        @media (min-height: 768px) and (max-height: 899px) {
+            font-size: 0.7rem;
+        }
+        @media (min-height: 768px) and (max-height: 844px) {
+            font-size: 0.6rem;
+        }
+        @media (min-height: 740px) and (max-height: 767px) {
+            font-size: 0.55rem;
+        }
+    }
+
+//RIGHT SECTION
+
+.stacInformathion {
+    @extend %flexCenter;
+    flex-direction: column;
+    width: 60%;
+
+    @media (max-width: 739px), (max-height: 739px) {
+        width: 100%;
+        height: auto;
+        padding-top: 1rem;
+
+    }
+}
+
+img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: auto;
+    height: auto; 
+}
+
+//BLOCK
+
+.block {
+    @extend %flexCenter;
+    height: auto;
+    flex-direction: column;
+}
+
+hr {
+    width: 20rem;
+    height: 0.3rem;
+    background: linear-gradient(to right, rgba(17, 17, 17, 0.336) 50%, #292929 50%) no-repeat 50% 75%;
+    border-radius: 0.15rem;
+    margin-top: 1rem;
+
+    @media (min-height: 845px) and (max-height: 899px) {
+        width: 16rem;
+    }
+    @media (min-height: 768px) and (max-height: 844px) {
+        width: 14rem;
+    }
+    @media (min-height: 740px) and (max-height: 767px) {
+        width: 10rem;
+        height: 0.2rem;
+        border-radius: 0.1rem;
+    }
+    @media (max-width: 739px), (max-height: 739px) {
+        width: 20rem;
+        height: 0.3rem;
+        border-radius: 0.15rem;
+    }
+}
+
+.heading {
+    @extend %padingMargin;
+
+    width: 100%;
+    margin: 1rem 0;
+    padding-left: 2rem;
+
+        h4 {
+            padding-bottom: 0;
+            padding-top: 2%;
+        }
+
+    @media (min-height: 845px) and (max-height: 899px) {
+        padding-left: 2rem;
+        margin: 0.4rem 0;
+    }
+    @media (min-height: 768px) and (max-height: 844px) {
+        padding-left: 1.5rem;
+        margin: 0.3rem 0;
+    }
+    @media (min-height: 740px) and (max-height: 767px) {
+        padding-left: 1rem;
+        margin: 0.2rem 0;
+    }
+}
+
+.stakInfo {
+    @extend %flexCenter;
+}
+
+.year {
+    width: 20%;
+    padding-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+
+    h5 {
+        @extend %flexCenter;
+        font-size: 0.8rem;
+        font-weight: 700;
+        height: 3rem;
+    }
+
+    @media (min-height: 900px) and (max-height: 955px) {
+       h5 { font-size: 0.7rem;
+       }
+    }
+    @media (min-height: 845px) and (max-height: 899px) {
+        padding-left: 1.2rem;
+      h5 {
+          font-size: 0.65rem;
+      }  
+    }
+    @media (min-height: 768px) and (max-height: 844px) {
+        padding-left: 1rem;
+      h5 {
+          font-size: 0.55rem;
+      }
+    }
+      @media (min-height: 740px) and (max-height: 767px) {
+        padding-left: 0.8rem;
+        h5 {
+            font-size: 0.45rem;
+            height: 2rem;
+        }  
+    }
+    }
+
+
+.middleLine {
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+    align-items: center;
+}
+
+.middleLineBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 3rem;
+    justify-content: flex-end;
+
+    &:last-child {
+        justify-content: flex-start;
+    }
+
+    @media (min-height: 740px) and (max-height: 767px) {
+    height: 2rem;
+    }
+}
+
+.line {
+    background-color:#222;
+    border:1px;
+    display: flex;
+    height: 1.2rem;
+    width: 2px;
+    border-color: black;
+
+    @media (min-height: 740px) and (max-height: 767px) {
+        height: 0.7rem;
+        }    
+}
+
+.circle {
+    background-color:rgba(255, 255, 255, 0);
+    border:2px solid #222;    
+    height:0.4rem;
+    width:0.4rem;
+    border-radius:50%;
+}
+
+.history {
+    width: 70%;
+    box-sizing: border-box;
+    padding-right: 2rem;
+
+
+    p {
+        display: flex;
+        font-size: 0.7rem;
+        text-align: justify;
+        height: 3rem;
+        align-items: center;
+
+        @media (min-height: 740px) and (max-height: 767px) {
+            font-size: 0.5rem;
+            height: 2rem;
+            }        
+    }
+}
+
+.historyInfo {
+    display: flex;
+    align-items: center;
+
+    font-size: 0.7rem;
+    text-align: justify;
+    height: 3rem;
+
+    @media (min-height: 740px) and (max-height: 767px) {
+        height: 2rem;
+        }
+}
+
+//SKILLS
+
+.skills {
+    @extend %padingMargin;
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.skillsWrapperRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.marginTop {
+    margin-top: 1.5rem;
+    @media (min-height: 740px) and (max-height: 767px) {
+        margin-top: 0.6rem;
+    }
+}
+
+.skillsWrapper {
+    @extend %flexCenter;
+    flex-direction: column;
+
+    p {
+        font-size: 0.8rem;
+        margin-top: 0.2rem;
+    }
+
+@media (min-height: 768px) and (max-height: 844px) {
+    p {
+        font-size: 0.7rem;
+        margin-top: 0.2rem;
+    }
+}
+@media (min-height: 740px) and (max-height: 767px) {
+    p {
+        font-size: 0.6rem;
+        margin-top: 0.15rem;
+    }
+}
+}
+
+
+
+.skillsCircleWrapper {
+    @extend %flexCenter;
+    flex-direction: column;
+
+    background-color:rgba(255, 255, 255, 0);
+    border:2px solid #222;    
+    height:70px;
+    width:70px;
+    border-radius:50%;
+
+    @media (min-height: 845px) and (max-height: 955px) {
+        height:60px;
+        width:60px;    
+    }
+    @media (min-height: 768px) and (max-height: 844px) {
+        height:50px;
+        width:50px;
+    }
+    @media (min-height: 740px) and (max-height: 767px) {
+        height:40px;
+        width:40px;
+    }
+}
+
+%vhCircleAfter {
+    width: 55px;
+    height: 55px;
+
+    @media (min-height: 845px) and (max-height: 955px) {
+            width: 45px;
+            height: 45px;
+        }
+    @media (min-height: 768px) and (max-height: 844px) {
+            width: 35px;
+            height: 35px;
+        }
+    @media (min-height: 740px) and (max-height: 767px) {
+            width: 26px;
+            height: 26px;
+    }
+}
+
+.skillsCircleWrapper:after {
+    content:'';
+    position: absolute;
+    display: inline-block;
+    @extend %vhCircleAfter;
+    border: 7px solid rgba(56, 87, 116, 0.541);
+    border-right:7px solid transparent;
+    border-radius: 50%;
+
+@media (min-height: 740px) and (max-height: 767px) {
+    border: 5px solid rgba(56, 87, 116, 0.541);
+    border-right:5px solid transparent;
+    }
+}
+
+.gitCircleStak {
+    .skillsCircleWrapper:after {
+        content:'';
+        position: absolute;
+        display: inline-block;
+        @extend %vhCircleAfter;
+        border: 7px solid rgba(56, 87, 116, 0.541);
+        border-right: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+        border-radius: 50%;
+    
+        @media (min-height: 740px) and (max-height: 767px) {
+            border: 5px solid rgba(56, 87, 116, 0.541);
+            border-right:5px solid transparent;
+            border-bottom: 5px solid transparent;
+            }
+    }
+}
+
+.jsCircleStak {
+    .skillsCircleWrapper:after {
+        content:'';
+        position: absolute;
+        display: inline-block;
+        @extend %vhCircleAfter;
+        border: 7px solid rgba(56, 87, 116, 0.541);
+        border-right: 7px solid transparent;
+        border-top: 7px solid transparent;
+        border-radius: 50%;
+
+        @media (min-height: 740px) and (max-height: 767px) {
+            border: 5px solid rgba(56, 87, 116, 0.541);
+            border-right:5px solid transparent;
+            border-top: 5px solid transparent;
+            }
+    }
+}
+
+.reactCircleStak {
+    .skillsCircleWrapper:after {
+        content:'';
+        position: absolute;
+        display: inline-block;
+        @extend %vhCircleAfter;
+        border: 7px solid rgba(56, 87, 116, 0.541);
+        border-right: 7px solid transparent;
+        border-left: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+        border-radius: 50%;
+
+        @media (min-height: 740px) and (max-height: 767px) {
+            border: 5px solid rgba(56, 87, 116, 0.541);
+            border-right:5px solid transparent;
+            border-left: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            }
+    }
+}
+
+.skillsImg {
+    min-height: 2rem;
+    min-width: 2rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: auto;
+    height: auto;
+    transition: 0.8s; 
+
+@media (min-height: 768px) and (max-height: 844px) {
+    min-height: 1.5rem;
+    min-width: 1.5rem;
+}
+@media (min-height: 740px) and (max-height: 767px) {
+    min-height: 1.1rem;
+    min-width: 1.1rem;
+}
+}
+
+.img1 {
+    background-image: url(/img/photoshop.png);
+}
+
+.img2 {
+    background-image: url(/img/lightroom.png);
+}
+
+.img3 {
+    background-image: url(/img/figma.png);
+}
+
+.img4 {
+    background-image: url(/img/Git.png);
+}
+
+.img5 {
+    background-image: url(/img/html5.png);
+}
+
+.img6 {
+    background-image: url(/img/css3.png);
+}
+
+.img7 {
+    background-image: url(/img/js.png);
+}
+
+.img8 {
+    background-image: url(/img/react.png);
+}
+
+.img9 {
+    background-image: url(/img/Chisto4\ Dev\ Resume.png);
+}
